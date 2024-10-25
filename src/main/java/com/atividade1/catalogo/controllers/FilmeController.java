@@ -3,6 +3,7 @@ package com.atividade1.catalogo.controllers;
 import com.atividade1.catalogo.models.Analise;
 import com.atividade1.catalogo.models.Filme;
 import com.atividade1.catalogo.repositories.FilmeRepository;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -55,5 +56,16 @@ public class FilmeController {
             filmeRepository.save(filme);  // Atualiza o filme no banco de dados
         }
         return "redirect:/filmes/" + id;
+    }
+
+    @GetMapping("/editar/{id}")
+    public String exibirFormularioEdicao(@PathVariable Long id, Model model) {
+        Optional<Filme> filmeOpt = filmeRepository.findById(id);
+        if (filmeOpt.isPresent()) {
+            model.addAttribute("filme", filmeOpt.get());
+            return "editarFilme";
+        } else {
+            return "redirect:/filmes";
+        }
     }
 }

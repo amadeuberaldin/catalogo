@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
-        <html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Filmes Cadastrados</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" th:href="@{/Estilo.css}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="/Estilo.css">
     </head>
     <body>
         <div class="form-container">
             <h1>Filmes Cadastrados</h1>
-            <ul>
+            <ul id="listaFilmes">
+                <li th:each="filme : ${filmes}" th:id="'filme-' + ${filme.id}">
+                    <!-- Link para detalhes do filme -->
                 <li th:each="filme : ${filmes}">
                     <a th:href="@{/filmes/{id}(id=${filme.id})}" th:text="${filme.titulo}"></a>
+                    </a>
+                    <!-- Ícone para editar -->
+                    <i class="fas fa-edit" th:onclick="'window.location.href=\'/filmes/editar/' + ${filme.id} + '\''"></i>
                 </li>
             </ul>
             <a href="/filmes/novo">Cadastrar Novo Filme</a>
