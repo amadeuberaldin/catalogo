@@ -6,8 +6,9 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" th:href="@{/Estilo.css}">
+            <script src="/theme-toggle.js"></script>
         </head>
-        <body>
+        <body class="light-theme">
             <div class="form-container">
                 <h1 th:text="${filme.titulo}">Título do Filme</h1>
                 <p><strong>Sinopse:</strong> <span th:text="${filme.sinopse}"></span></p>
@@ -39,5 +40,6 @@
 
                 <a href="/filmes">Voltar à lista de filmes</a>
             </div>
+            <button id="toggle-theme">Alternar Tema</button>
         </body>
     </html>

@@ -1,3 +1,4 @@
+/* Estilo básico do body */
 body {
     display: flex;
     justify-content: center;
@@ -7,11 +8,12 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Configuração para a estrutura do formulário */
 .form-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo */
-    width: 400px; /* Definido um tamanho máximo para centralizar bem */
+    align-items: center;
+    width: 400px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -66,4 +68,66 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* Estilos para tema claro */
+body.light-theme {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+body.light-theme .form-container {
+    background-color: #f9f9f9 !important;
+    border: 1px solid #ccc !important;
+    color: #000 !important;
+}
+
+/* Estilos para tema escuro */
+body.dark-theme {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
+
+body.dark-theme .form-container {
+    background-color: #333333 !important;
+    border: 1px solid #666 !important;
+    color: #fff !important;
+}
+
+/* Estilo do botão de alternância */
+#toggle-theme {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Ajuste para o botão no tema escuro */
+body.dark-theme #toggle-theme {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Estilo para links no tema claro */
+body.light-theme a {
+    color: #0066cc; /* Azul escuro para contraste em fundo claro */
+}
+
+body.light-theme a:hover {
+    color: #004d99; /* Tom um pouco mais escuro para o hover */
+}
+
+/* Estilo para links no tema escuro */
+body.dark-theme a {
+    color: #66ccff; /* Azul claro para contraste em fundo escuro */
+}
+
+body.dark-theme a:hover {
+    color: #99ddff; /* Tom mais claro para o hover */
 }

@@ -6,8 +6,9 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" th:href="@{/Estilo.css}">
+            <script src="/theme-toggle.js"></script>
         </head>
-        <body>
+        <body class="light-theme">
             <div class="form-container">
                 <h1>Cadastrar Filme</h1>
                 <form th:action="@{/filmes}" th:object="${filme}" method="post" class="formulario-filme">
@@ -32,5 +33,6 @@
                     </div>
                 </form>
             </div>
+            <button id="toggle-theme">Alternar Tema</button>
         </body>
     </html>

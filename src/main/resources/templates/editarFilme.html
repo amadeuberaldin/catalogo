@@ -8,8 +8,9 @@
         <link rel="stylesheet" href="/Estilo.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="/script.js"></script>
+        <script src="/theme-toggle.js"></script>
     </head>
-    <body>
+    <body class="light-theme">
         <div class="form-container">
             <h1>Editar Filme</h1>
             <form th:action="@{/filmes/salvar}" th:object="${filme}" method="post">
@@ -44,5 +45,6 @@
 
             <a href="/filmes">Cancelar</a>
         </div>
+        <button id="toggle-theme">Alternar Tema</button>
     </body>
 </html>
